@@ -1,0 +1,16 @@
+[
+  {
+    "artifact": "frcJava (in project PathFollower 2)",
+    "target": "roborio",
+    "debugfile": "frcJava_roborio.debugconfig",
+    "project": "PathFollower 2",
+    "language": "java"
+  },
+  {
+    "artifact": "frcJava (in project PathFollower)",
+    "target": "roborio",
+    "debugfile": "frcJava_roborio.debugconfig",
+    "project": "PathFollower",
+    "language": "java"
+  }
+]
