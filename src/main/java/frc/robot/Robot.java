@@ -77,11 +77,18 @@ public class Robot extends TimedRobot {
     if (m_left_follower.isFinished() || m_right_follower.isFinished()) {
       m_follower_notifier.stop();
     } else {
-      //Set left motor to left output, and right motor to right output.
+      //Grab output speeds from pre-generated paths.
       double left_speed = m_left_follower.calculate(driveTrain.getLeftSensorPos());
       double right_speed = m_right_follower.calculate(driveTrain.getRightSensorPos());
-      driveTrain.setLeftVoltage(left_speed);
-      driveTrain.setRightVoltage(right_speed);
+
+      //Use yaw data from NavX IMU to adapt path to aim at desired heading.
+      double heading = driveTrain.getYaw();
+      double desired_heading = Pathfinder.r2d(m_left_follower.getHeading());
+      double heading_difference = Pathfinder.boundHalfDegrees(desired_heading - heading);
+      double turn =  Constants.gyroP * (-1.0/80.0) * heading_difference;
+
+      driveTrain.setLeftVoltage(left_speed + turn);
+      driveTrain.setRightVoltage(right_speed - turn);
     }
   }
 

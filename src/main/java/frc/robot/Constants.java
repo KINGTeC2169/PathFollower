@@ -19,5 +19,7 @@ class Constants {
     static double right_d = 0;
     static double right_a = 0;
 
+    static double gyroP = 0.8;
+
 
 }

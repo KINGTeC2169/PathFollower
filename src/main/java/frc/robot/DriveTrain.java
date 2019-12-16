@@ -2,17 +2,19 @@ package frc.robot;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.kauailabs.navx.frc.AHRS;
+import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 class DriveTrain {
 
     private TalonSRX left;
     private TalonSRX right;
+    private AHRS gyro;
 
     DriveTrain(){
-//
-//        Compressor c= new Compressor();
-//        c.start();
+
+        gyro = new AHRS(SPI.Port.kMXP);
 
         //Initialize left side of the driveline
         left = new TalonSRX(0);
@@ -66,6 +68,11 @@ class DriveTrain {
     void zeroSensors(){
         left.setSelectedSensorPosition(0,0,0);
         right.setSelectedSensorPosition(0,0,0);
+        gyro.reset();
+    }
+
+    double getYaw(){
+        return gyro.getAngle();
     }
 
 
