@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74dcecc5-23fd-4026-9d70-5d05eec88875" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/frc/robot/SmartdashboardHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/Robot.java" afterDir="false" />
     </list>
@@ -112,7 +111,7 @@
       <updated>1576271857188</updated>
       <workItem from="1576271859144" duration="6829000" />
       <workItem from="1576278907697" duration="3068000" />
-      <workItem from="1576524865689" duration="1937000" />
+      <workItem from="1576524865689" duration="2096000" />
     </task>
     <servers />
   </component>

@@ -28,11 +28,8 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     driveTrain = new DriveTrain();
-
     controller = new Joystick(0);
-
     smartdashboardHandler = new SmartdashboardHandler();
-
   }
 
   @Override
@@ -108,7 +105,7 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopInit(){
-    
+
     smartdashboardHandler.update();
 
     //When entering teleop, stop notifier no matter the status of the path.
