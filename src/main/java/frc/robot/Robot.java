@@ -23,20 +23,27 @@ public class Robot extends TimedRobot {
 
   private Joystick controller;
 
+  private SmartdashboardHandler smartdashboardHandler;
+
   @Override
   public void robotInit() {
     driveTrain = new DriveTrain();
 
     controller = new Joystick(0);
 
+    smartdashboardHandler = new SmartdashboardHandler();
+
   }
 
   @Override
   public void robotPeriodic() {
+
   }
 
   @Override
   public void autonomousInit() {
+
+    smartdashboardHandler.update();
     driveTrain.zeroSensors();
 
     //Define points for path
@@ -94,10 +101,16 @@ public class Robot extends TimedRobot {
 
   @Override
   public void autonomousPeriodic() {
+
+    smartdashboardHandler.update();
+
   }
 
   @Override
   public void teleopInit(){
+    
+    smartdashboardHandler.update();
+
     //When entering teleop, stop notifier no matter the status of the path.
     try{
       m_follower_notifier.stop();
